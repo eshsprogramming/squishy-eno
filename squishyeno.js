@@ -26,29 +26,11 @@ var resize = function () {
  ww = Math.ceil(window.innerWidth);
  hh = Math.ceil(window.innerHeight);
  
- var fblikebox = document.getElementById('fblikebox');
- var googbox = document.getElementById('googbox');
- if (fblikebox) {
-  if (hh < 710) {
-   fblikebox.style.right = '178px';
-   if (googbox) {
-    googbox.style.bottom = '5px';
-    googbox.style.top = 'auto';
-   }
-  } else {
-   fblikebox.style.right = '8px';
-   if (googbox) {
-    googbox.style.top = '5px';
-    googbox.style.bottom = 'auto';
-   }
-  }
- }
- 
  game.div.style.width = ww+'px';
  game.div.style.height = hh+'px';
  
  pipe_center = (hh - 88)/2;
- 
+ ');
  game.canvas.width = ww;
  game.canvas.height = hh;
  game.ctx.fillStyle = '#71c5cf';
@@ -239,7 +221,6 @@ var gameLoaded = function () {
  game.div.appendChild(trees.canvas);
  game.div.appendChild(logo.img);
  game.div.appendChild(gameover.img);
- document.body.appendChild(fbshare.img);
  document.body.appendChild(playagain.img);
  game.div.appendChild(c2s.img);
  game.div.appendChild(parody.div);
@@ -290,8 +271,6 @@ var poundPipes = function () {
   gameover.hiding = true;
   c2s.showing = false;
   c2s.hiding = true;
-  fbshare.showing = false;
-  fbshare.hiding = true;
   playagain.showing = false;
   playagain.hiding = true;
   parody.div.style.display = 'none';
@@ -411,37 +390,6 @@ gameover.reposition = function () {
  gameover.img.style.left = Math.floor((ww-626)/2)+'px';
  gameover.img.style.top = Math.floor(Math.cos(gameover.fr/32)*4 + (hh - 200 - 144 - 88)/2)+'px';
 }
-
-
-
-var fbshare = {}; // 592 x 80
-fbshare.a = -.2;
-fbshare.fr = 0;
-fbshare.showing = false;
-fbshare.hiding = true;
-fbshare.img = loadGameImage('http://i.lvme.me/sq/fbshare.png');
-fbshare.img.style.border = '0px';
-fbshare.img.style.cursor = 'pointer';
-fbshare.img.border = 0;
-fbshare.img.style.position = 'absolute';
-fbshare.img.style.display = 'none';
-fbshare.img.style.opacity = 0;
-fbshare.img.style.zIndex = '142069';
-fbshare.reposition = function () {
- fbshare.img.style.left = Math.floor((ww-592)/2)+'px';
- fbshare.img.style.top = Math.floor(Math.cos(fbshare.fr/12)*5 + (hh + 150 + 80 - 88)/2)+'px';
-}
-fbshare.img.onclick = function () {
- FB.ui({
-   method: 'feed',
-   link: 'http://squishybird.com/',
-   name: 'Squishy Bird',
-   picture: 'http://squishybird.com/fbthumb.jpg',
-   caption: 'I hate that freakin\' bird so much...',
-   description: 'I scored '+points+' in Squishy Bird! Can you beat that?'
- }, function(response){});
-}
-
 
 var playagain = {}; //  252x71     592 x 80
 playagain.a = -.2;
@@ -775,39 +723,7 @@ var oef = function () {
      gameover.img.style.display = 'none';
     }
    }
-   
-   if (fbshare.showing) {
-    fbshare.a += .03;
-    if (fbshare.a >= 1) {
-     fbshare.a = 1;
-     fbshare.showing = false;
-    }
-    fbshare.img.style.opacity = fbshare.a;
-   }
-   if (fbshare.hiding) {
-    fbshare.a -= .1;
-    if (fbshare.a <= 0) {
-     fbshare.a = 0;
-     fbshare.hiding = false;
-    }
-    fbshare.img.style.opacity = fbshare.a;
-   }
-   if (fbshare.a > 0) {
-    fbshare.fr++;
-    fbshare.reposition();
-   }
-   if (fbshare.a > .01) {
-    if (!fbshare.visible) {
-     fbshare.visible = true;
-     fbshare.img.style.display = 'inline';
-    }
-   } else {
-    if (fbshare.visible) {
-     fbshare.visible = false;
-     fbshare.img.style.display = 'none';
-    }
-   }
-   
+
    if (playagain.showing) {
     playagain.a += .03;
     if (playagain.a >= 1) {
@@ -1067,8 +983,6 @@ var oef = function () {
       game.ended = true;
       gameover.hiding = false;
       gameover.showing = true;
-      fbshare.hiding = false;
-      fbshare.showing = true;
       playagain.hiding = false;
       playagain.showing = true;
       if (points > highscore) {
