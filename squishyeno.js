@@ -30,7 +30,7 @@ var resize = function () {
  game.div.style.height = hh+'px';
  
  pipe_center = (hh - 88)/2;
- ');
+ 
  game.canvas.width = ww;
  game.canvas.height = hh;
  game.ctx.fillStyle = '#71c5cf';
@@ -288,7 +288,6 @@ var poundPipes = function () {
  }
  return false;
 }
-
 
 
 var want_pound = false;
