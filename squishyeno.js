@@ -53,7 +53,6 @@ var resize = function () {
  logo.reposition();
  gameover.reposition();
  c2s.reposition();
- fbshare.reposition();
  playagain.reposition();
  
 
