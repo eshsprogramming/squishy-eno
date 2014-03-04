@@ -301,12 +301,12 @@ var bird_images = [];
 var angry_bird_images = [];
 for (var i = 1; i<=3; i++) {
  var o = {};
- var img = loadGameImage('http://i.lvme.me/sq/bird'+i+'.png');
+ var img = loadGameImage('http://eshsprogramming.github.io/img/bird'+i+'.png');
  o.img = img;
  bird_images.push(o);
 
  var o = {};
- var img = loadGameImage('http://i.lvme.me/sq/angrybird'+i+'.png');
+ var img = loadGameImage('http://eshsprogramming.github.io/img/angrybird'+i+'.png');
  o.img = img;
  angry_bird_images.push(o);
 }
@@ -364,7 +364,7 @@ logo.a = -.2;
 logo.fr = 0;
 logo.showing = true;
 logo.hiding = false;
-logo.img = loadGameImage('http://i.lvme.me/sq/logo.png'); // 626 x 144
+logo.img = loadGameImage('http://eshsprogramming.github.io/img/logo.png'); // 626 x 144
 logo.img.style.position = 'absolute';
 logo.img.style.opacity = 0;
 logo.img.style.zIndex = '42069';
@@ -380,7 +380,7 @@ gameover.a = -.2;
 gameover.fr = 0;
 gameover.showing = false;
 gameover.hiding = true;
-gameover.img = loadGameImage('http://i.lvme.me/sq/gameover.png'); // 626 x 144
+gameover.img = loadGameImage('http://eshsprogramming.github.io/img/gameover.png'); // 626 x 144
 gameover.img.style.position = 'absolute';
 gameover.img.style.opacity = 0;
 gameover.img.style.zIndex = '42069';
@@ -394,7 +394,7 @@ playagain.a = -.2;
 playagain.fr = 0;
 playagain.showing = false;
 playagain.hiding = true;
-playagain.img = loadGameImage('http://i.lvme.me/sq/playagain.png');
+playagain.img = loadGameImage('http://eshsprogramming.github.io/img/playagain.png');
 playagain.img.style.border = '0px';
 playagain.img.style.cursor = 'pointer';
 playagain.img.border = 0;
@@ -502,7 +502,7 @@ ground.canvas = document.createElement('canvas');
 ground.canvas.style.position = 'absolute';
 ground.canvas.style.zIndex = '31337';
 ground.ctx = ground.canvas.getContext('2d');
-ground.bit = loadGameImage('http://i.lvme.me/sq/ground.png');
+ground.bit = loadGameImage('http://eshsprogramming.github.io/img/ground.png');
 
 
 
@@ -523,7 +523,7 @@ trees.canvas = document.createElement('canvas');
 trees.canvas.style.position = 'absolute';
 trees.canvas.style.zIndex = '61';
 trees.ctx = trees.canvas.getContext('2d');
-trees.bit = loadGameImage('http://i.lvme.me/sq/trees.png');
+trees.bit = loadGameImage('http://eshsprogramming.github.io/img/trees.png');
 
 
 
@@ -567,7 +567,7 @@ var newBird = function () {
 
 
 
-var blood_image = loadGameImage('http://i.lvme.me/sq/blood.png');
+var blood_image = loadGameImage('http://eshsprogramming.github.io/img/blood.png');
 var bloods = [];
 var newBlood = function () {
  var blood = {};
@@ -592,7 +592,7 @@ var repositionBlood = function (blood) {
 
 
 var pipe1 = {};
-pipe1.img = loadGameImage('http://i.lvme.me/sq/pipe1.png');
+pipe1.img = loadGameImage('http://eshsprogramming.github.io/img/pipe1.png');
 pipe1.img.width = 148;
 pipe1.img.height = 1664;
 pipe1.img.style.position = 'absolute';
