@@ -531,16 +531,16 @@ var ruinTheFun = function () {
   ruined = 1
 }
 var jumpRuin = function () {
-  if(!ruined){
-    if (pipe_opening >= 15) {
-        pipe_opening = -1;
-      }
-    }
-    if(ruined){
-      if (pipe_opening >= 5) {
-        pipe_opening = -1;
-      }
-    }
+ if(ruined == 0){
+  if (pipe_opening >= 15) {
+   pipe_opening = -1;
+  }
+ }
+ if(ruined == 1){
+  if (pipe_opening >= 5) {
+   pipe_opening = -1;
+  }
+ }
 }
 
 
