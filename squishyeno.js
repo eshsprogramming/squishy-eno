@@ -404,7 +404,7 @@ playagain.img.style.opacity = 0;
 playagain.img.style.zIndex = '142068';
 playagain.reposition = function () {
  playagain.img.style.left = Math.floor((ww-252)/2)+'px';
- playagain.img.style.top = Math.floor(Math.cos(playagain.fr/14)*5 + (hh + 320 + 71 - 88)/2)+'px';
+ playagain.img.style.top = Math.floor(Math.cos(playagain.fr/14)*5 + (hh + 71 - 88)/2)+'px';
 }
 playagain.img.onclick = function () {
  game.ended = false;
