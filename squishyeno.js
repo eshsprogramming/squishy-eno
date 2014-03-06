@@ -301,12 +301,12 @@ var bird_images = [];
 var angry_bird_images = [];
 for (var i = 1; i<=3; i++) {
  var o = {};
- var img = loadGameImage('http://eshsprogramming.github.io/squishy-eno/img/bird'+i+'.png');
+ var img = loadGameImage('img/bird'+i+'.png');
  o.img = img;
  bird_images.push(o);
 
  var o = {};
- var img = loadGameImage('http://eshsprogramming.github.io/squishy-eno/img/angrybird'+i+'.png');
+ var img = loadGameImage('img/angrybird'+i+'.png');
  o.img = img;
  angry_bird_images.push(o);
 }
@@ -318,25 +318,25 @@ angry_bird_images.push(angry_bird_images[1]); // this one final push makes the w
 
 
 
-var flap = loadGameSound('http://i.lvme.me/sq/flap.wav', 5);
-var pipeslide = loadGameSound('http://i.lvme.me/sq/slide.wav', 3);
-var clang = loadGameSound('http://i.lvme.me/sq/clang.wav', 3);
+var flap = loadGameSound('sound/flap.wav', 5);
+var pipeslide = loadGameSound('sound/slide.wav', 3);
+var clang = loadGameSound('sound/clang.wav', 3);
 
-var coin1 = loadGameSound('http://i.lvme.me/sq/coin.wav', 3);
-var coin2 = loadGameSound('http://i.lvme.me/sq/coin2.wav', 3);
-var coin3 = loadGameSound('http://i.lvme.me/sq/coin3.wav', 3);
-var coin4 = loadGameSound('http://i.lvme.me/sq/coin4.wav', 3);
+var coin1 = loadGameSound('sound/coin.wav', 3);
+var coin2 = loadGameSound('sound/coin2.wav', 3);
+var coin3 = loadGameSound('sound/coin3.wav', 3);
+var coin4 = loadGameSound('sound/coin4.wav', 3);
 
-var kick = loadGameSound('http://i.lvme.me/sq/kick.wav', 5);
-var kick2 = loadGameSound('http://i.lvme.me/sq/kick2.wav', 5);
-var kick3 = loadGameSound('http://i.lvme.me/sq/kick3.wav', 5);
-var kick4 = loadGameSound('http://i.lvme.me/sq/kick4.wav', 5);
-var kick5 = loadGameSound('http://i.lvme.me/sq/kick5.wav', 5);
+var kick = loadGameSound('sound/kick.wav', 5);
+var kick2 = loadGameSound('sound/kick2.wav', 5);
+var kick3 = loadGameSound('sound/kick3.wav', 5);
+var kick4 = loadGameSound('sound/kick4.wav', 5);
+var kick5 = loadGameSound('sound/kick5.wav', 5);
 
 var kicks = [kick, kick2, kick3, kick4, kick5];
 
-var squish1 = loadGameSound('http://i.lvme.me/sq/squish1.wav', 3);
-var squish2 = loadGameSound('http://i.lvme.me/sq/squish2.wav', 3);
+var squish1 = loadGameSound('sound/squish1.wav', 3);
+var squish2 = loadGameSound('sound/squish2.wav', 3);
 
 var squishes = [squish1, squish2];
 
@@ -364,7 +364,7 @@ logo.a = -.2;
 logo.fr = 0;
 logo.showing = true;
 logo.hiding = false;
-logo.img = loadGameImage('http://eshsprogramming.github.io/squishy-eno/img/logo.png'); // 626 x 144
+logo.img = loadGameImage('img/logo.png'); // 626 x 144
 logo.img.style.position = 'absolute';
 logo.img.style.opacity = 0;
 logo.img.style.zIndex = '42069';
@@ -380,7 +380,7 @@ gameover.a = -.2;
 gameover.fr = 0;
 gameover.showing = false;
 gameover.hiding = true;
-gameover.img = loadGameImage('http://eshsprogramming.github.io/squishy-eno/img/gameover.png'); // 626 x 144
+gameover.img = loadGameImage('img/gameover.png'); // 626 x 144
 gameover.img.style.position = 'absolute';
 gameover.img.style.opacity = 0;
 gameover.img.style.zIndex = '42069';
@@ -394,7 +394,7 @@ playagain.a = -.2;
 playagain.fr = 0;
 playagain.showing = false;
 playagain.hiding = true;
-playagain.img = loadGameImage('http://eshsprogramming.github.io/squishy-eno/img/playagain.png');
+playagain.img = loadGameImage('img/playagain.png');
 playagain.img.style.border = '0px';
 playagain.img.style.cursor = 'pointer';
 playagain.img.border = 0;
@@ -417,7 +417,7 @@ var c2s = {};
 c2s.a = -1;
 c2s.showing = true;
 c2s.hiding = false;
-c2s.img = loadGameImage('http://i.lvme.me/sq/clicktostart.png'); // 337 x 75
+c2s.img = loadGameImage('img/clicktostart.png'); // 337 x 75
 c2s.img.style.position = 'absolute';
 c2s.img.style.opacity = 0;
 c2s.img.style.zIndex = '42070';
@@ -502,7 +502,7 @@ ground.canvas = document.createElement('canvas');
 ground.canvas.style.position = 'absolute';
 ground.canvas.style.zIndex = '31337';
 ground.ctx = ground.canvas.getContext('2d');
-ground.bit = loadGameImage('http://eshsprogramming.github.io/squishy-eno/img/ground.png');
+ground.bit = loadGameImage('img/ground.png');
 
 
 
@@ -512,7 +512,7 @@ city.canvas = document.createElement('canvas');
 city.canvas.style.position = 'absolute';
 city.canvas.style.zIndex = '60';
 city.ctx = city.canvas.getContext('2d');
-city.bit = loadGameImage('http://i.lvme.me/sq/city.png');
+city.bit = loadGameImage('img/city.png');
 
 
 
@@ -523,7 +523,7 @@ trees.canvas = document.createElement('canvas');
 trees.canvas.style.position = 'absolute';
 trees.canvas.style.zIndex = '61';
 trees.ctx = trees.canvas.getContext('2d');
-trees.bit = loadGameImage('http://eshsprogramming.github.io/squishy-eno/img/trees.png');
+trees.bit = loadGameImage('img/trees.png');
 
 
 
@@ -567,7 +567,7 @@ var newBird = function () {
 
 
 
-var blood_image = loadGameImage('http://eshsprogramming.github.io/squishy-eno/img/blood.png');
+var blood_image = loadGameImage('img/blood.png');
 var bloods = [];
 var newBlood = function () {
  var blood = {};
@@ -592,7 +592,7 @@ var repositionBlood = function (blood) {
 
 
 var pipe1 = {};
-pipe1.img = loadGameImage('http://eshsprogramming.github.io/squishy-eno/img/pipe1.png');
+pipe1.img = loadGameImage('img/pipe1.png');
 pipe1.img.width = 148;
 pipe1.img.height = 1664;
 pipe1.img.style.position = 'absolute';
@@ -602,7 +602,7 @@ pipe1.img.style.zIndex = '420';
 
 
 var pipe2 = {};
-pipe2.img = loadGameImage('http://i.lvme.me/sq/pipe2.png');
+pipe2.img = loadGameImage('img/pipe2.png');
 pipe2.img.width = 148;
 pipe2.img.height = 1664;
 pipe2.img.style.position = 'absolute';
