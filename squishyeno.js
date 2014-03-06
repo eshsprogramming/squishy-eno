@@ -526,7 +526,22 @@ trees.ctx = trees.canvas.getContext('2d');
 trees.bit = loadGameImage('img/trees.png');
 
 
-
+var ruined = 0;
+var ruinTheFun = function () {
+  ruined = 1
+}
+var jumpRuin = function () {
+  if(!ruined){
+    if (pipe_opening >= 15) {
+        pipe_opening = -1;
+      }
+    }
+    if(ruined){
+      if (pipe_opening >= 5) {
+        pipe_opening = -1;
+      }
+    }
+}
 
 
 var birds = [];
@@ -792,9 +807,7 @@ var oef = function () {
    pipe2.img.style.top = (pipe_center + pipe_gap/2)+'px';
    if (pipe_opening >= 0) {
     pipe_opening++;
-    if (pipe_opening >= 15) {
-     pipe_opening = -1;
-    }
+    jumpRuin();
    }
    var kill_combo = 0;
    var new_points = 0;
