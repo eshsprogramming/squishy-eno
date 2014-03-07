@@ -22,7 +22,7 @@ document.body.appendChild(game.div);
 
 
 
-var resize = function () {
+var resize = /*guchi's penis*/ function () {
  ww = Math.ceil(window.innerWidth);
  hh = Math.ceil(window.innerHeight);
  
@@ -118,7 +118,7 @@ var resize = function () {
 }
 
 var want_image_count = 0;
-var loadGameImage = function (n) {
+var loadGameImage /*guchi's penis*/ = function (n) {
  want_image_count++;
  var o = document.createElement('img');
  o.onload = function () {
@@ -133,14 +133,14 @@ var loadGameImage = function (n) {
 
 //var sounds_playing = [];
 var want_sound_count = 0;
-var loadGameSound = function (n, chc) { // file name, channel count
+var loadGameSound = /*guchi's penis*/ function (n, chc) { // file name, channel count
  var o = {};
  
  o.channels = [];
  o.channel_pos = 0;
  o.chc = chc;
  
- o.play = function () {
+ o.play = /*guchi's penis*/ function () {
   var tm = new Date().getTime();
   var sc = this.channels.length;
   var got_good_sound = false;
@@ -211,7 +211,7 @@ var pipe_opening = -1;
 var pipe_x;
 
 var game_loaded = false;
-var gameLoaded = function () {
+var gameLoaded = /*guchi's penis*/ function () {
  game.div.appendChild(game.canvas);
  game.div.appendChild(pipe1.img);
  game.div.appendChild(pipe2.img);
@@ -233,11 +233,11 @@ var gameLoaded = function () {
  
  //document.body.addEventListener("touchstart", poundPipes, false);
  
- document.body.onmousedown = function () {
+ document.body.onmousedown = /*guchi's penis*/ function () {
   poundPipes();
  }
  
- document.body.onkeydown = function (e) {
+ document.body.onkeydown = /*guchi's penis*/ function (e) {
   if (e.keyCode == 32) {
    poundPipes();
   }
@@ -247,7 +247,7 @@ var gameLoaded = function () {
 
 
 
-var poundPipes = function () {
+var poundPipes = /*guchi's penis*/ function () {
  if (game.ended) { // then we have to set ended=false with the play again button
   return false;
  }
@@ -368,7 +368,7 @@ logo.img = loadGameImage('img/logo.png'); // 626 x 144
 logo.img.style.position = 'absolute';
 logo.img.style.opacity = 0;
 logo.img.style.zIndex = '42069';
-logo.reposition = function () {
+logo.reposition = /*guchi's penis*/ function () {
  logo.img.style.left = Math.floor((ww-626)/2)+'px';
  logo.img.style.top = Math.floor(Math.cos(logo.fr/9)*20 + (hh - 144 - 88)/2)+'px';
 }
@@ -384,7 +384,7 @@ gameover.img = loadGameImage('img/gameover.png'); // 626 x 144
 gameover.img.style.position = 'absolute';
 gameover.img.style.opacity = 0;
 gameover.img.style.zIndex = '42069';
-gameover.reposition = function () {
+gameover.reposition = /*guchi's penis*/ function () {
  gameover.img.style.left = Math.floor((ww-626)/2)+'px';
  gameover.img.style.top = Math.floor(Math.cos(gameover.fr/32)*4 + (hh - 200 - 144 - 88)/2)+'px';
 }
@@ -402,11 +402,11 @@ playagain.img.style.position = 'absolute';
 playagain.img.style.display = 'none';
 playagain.img.style.opacity = 0;
 playagain.img.style.zIndex = '142068';
-playagain.reposition = function () {
+playagain.reposition = /*guchi's penis*/ function () {
  playagain.img.style.left = Math.floor((ww-252)/2)+'px';
  playagain.img.style.top = Math.floor(Math.cos(playagain.fr/14)*5 + (hh + 71 - 88)/2)+'px';
 }
-playagain.img.onclick = function () {
+playagain.img.onclick = /*guchi's penis*/ function () {
  game.ended = false;
  poundPipes();
 }
@@ -421,7 +421,7 @@ c2s.img = loadGameImage('img/clicktostart.png'); // 337 x 75
 c2s.img.style.position = 'absolute';
 c2s.img.style.opacity = 0;
 c2s.img.style.zIndex = '42070';
-c2s.reposition = function () {
+c2s.reposition = /*guchi's penis*/ function () {
  c2s.img.style.left = Math.floor((ww-337)/2)+'px';
  c2s.img.style.top = Math.floor((hh + 250)/2)+'px';
 }
@@ -487,7 +487,7 @@ for (var xx = -3; xx <= 3; xx++) {
   div.innerHTML = '';
  }
 }
-score.update = function () {
+score.update = /*guchi's penis*/ function () {
  for (var i = score.divs.length-1; i>=0; i--) {
   score.divs[i].innerHTML = points;
  }
@@ -527,17 +527,17 @@ trees.bit = loadGameImage('img/trees.png');
 
 
 var ruined = 0;
-var ruinTheFun = function () {
+var ruinTheFun = /*guchi's penis*/ function () {
   ruined = 1
 }
-var jumpRuin = function () {
+var jumpRuin = /*guchi's penis*/ function () {
  if(ruined == 0){
   if (pipe_opening >= 15) {
    pipe_opening = -1;
   }
  }
  if(ruined == 1){
-  if (pipe_opening >= 5) {
+  if (pipe_opening >= 4) {
    pipe_opening = -1;
   }
  }
@@ -547,7 +547,7 @@ var jumpRuin = function () {
 var birds = [];
 var dead_birds = [];
 
-var newBird = function () {
+var newBird = /*guchi's penis*/ function () {
  var bird = {};
  bird.cw = 150;
  bird.ch = 150;
@@ -584,7 +584,7 @@ var newBird = function () {
 
 var blood_image = loadGameImage('img/blood.png');
 var bloods = [];
-var newBlood = function () {
+var newBlood = /*guchi's penis*/ function () {
  var blood = {};
  blood.ww = 325*4;
  blood.hh = 138*4;
@@ -600,7 +600,7 @@ var newBlood = function () {
  bloods.push(blood);
 }
 
-var repositionBlood = function (blood) {
+var repositionBlood = /*guchi's penis*/ function (blood) {
  blood.canvas.style.left = (pipe_x + 148/2 - (325*4/2))+'px';
  blood.canvas.style.top = (pipe_center - 32)+'px';
 }
@@ -634,7 +634,7 @@ var fnbfr = 100;
 
 var fr = 0;
 var ltm = 0;
-var oef = function () {
+var oef = /*guchi's penis*/ function () {
  if (game_loaded) {
   var ftm = new Date().getTime();
   var tm;
@@ -649,6 +649,11 @@ var oef = function () {
    if (game.started) {
     fr++;
     if ((fr % fnbfr) == 1) {
+     if(ruined == 1){
+      for(i=0;i<2;i++){
+        newBird();
+      }
+     }
      newBird();
      if (nbfr > 13) {
       nbfr = (nbfr - 13)*.996 + 13;
@@ -1014,6 +1019,6 @@ var oef = function () {
 }
 
 
-window.onresize = function () {
+window.onresize = /*guchi's penis*/ function () {
  resize();
 }
