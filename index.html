@@ -9,6 +9,16 @@
     <meta property="og:url" content="http://eshsprogramming.github.io/squishy-eno/">
     <meta property="og:site_name" content="Squishy Eno">
     <meta name="viewport" content="user-scalable=no, initial-scale=0.5, width=610, height=1024">
+    
+    <style>
+      .unselectable {
+        -moz-user-select: -moz-none;
+        -khtml-user-select: none;
+        -webkit-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+      }
+    </style>
   </head>
   <body style="margin: 0px; overflow: hidden;" cz-shortcut-listen="true">
 
@@ -20,7 +30,7 @@
       <canvas width="1366" height="242"></canvas>
       <img src="img/pipe1.png" width="148" height="1664" style="position: absolute; left: 609px; top: -1722px; z-index: 420;">
       <img src="img/pipe2.png" width="148" height="1664" style="position: absolute; left: 609px; top: 212px; z-index: 420;">
-      <canvas width="1366" height="88" style="position: absolute; z-index: 31337; left: 0px; top: 154px;"></canvas>
+      <canvas class="unselectable" width="1366" height="88" style="position: absolute; z-index: 31337; left: 0px; top: 154px;"></canvas>
       <canvas width="1366" height="256" style="position: absolute; z-index: 60; left: 0px; top: -102px;"></canvas>
       <canvas width="1366" height="216" style="position: absolute; z-index: 61; left: 0px; top: -62px;"></canvas>
       <img src="img/logo.png" style="position: absolute; opacity: 1; z-index: 42069; left: 370px; top: -15px; display: inline;">
