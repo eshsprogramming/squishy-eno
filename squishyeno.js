@@ -316,7 +316,7 @@ angry_bird_images.push(angry_bird_images[1]); // this one final push makes the w
 
 
 
-
+// Loads all the sounds
 
 var flap = loadGameSound('sound/flap.wav', 5);
 var pipeslide = loadGameSound('sound/slide.wav', 3);
@@ -343,9 +343,14 @@ var squishes = [squish1, squish2];
 
 var clanging = -1;
 
+// Loads music
 
+var backgroundMusic = loadGameSound('music/backgroundMusic.mp3',0);
+var melody = loadGameSound('music/melody.mp3',0);
 
+//Plays Music
 
+//setInterval()
 
 game.canvas = document.createElement('canvas');
 game.canvas.width = ww;
