@@ -349,13 +349,13 @@ var backgroundMusic = loadGameSound('music/backgroundMusic.mp3',7);
 var melody = loadGameSound('music/melody.mp3',7);
 
 //Plays Music
-
+/*
 backgroundMusic.play();
 melody.play();
 var musicDuration = 52000;
 setInterval(function() {backgroundMusic.play()},musicDuration);
 setInterval(function() {melody.play()},musicDuration*2);
-
+*/
 
 game.canvas = document.createElement('canvas');
 game.canvas.width = ww;
