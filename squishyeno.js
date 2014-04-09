@@ -345,8 +345,8 @@ var clanging = -1;
 
 // Loads music
 
-var backgroundMusic = loadGameSound('music/backgroundMusic.mp3',0);
-var melody = loadGameSound('music/melody.mp3',0);
+var backgroundMusic = loadGameSound('music/backgroundMusic.mp3',7);
+var melody = loadGameSound('music/melody.mp3',7);
 
 //Plays Music
 var musicDuration = 52000;
