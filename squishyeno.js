@@ -22,7 +22,7 @@ document.body.appendChild(game.div);
 
 
 
-var resize = /*guchi's penis*/ function () {
+var resize = function () {
  ww = Math.ceil(window.innerWidth);
  hh = Math.ceil(window.innerHeight);
  
@@ -107,8 +107,9 @@ var resize = /*guchi's penis*/ function () {
  
  pipe_x = Math.floor(ww/2 - 148/2);
  
- pipe1.img.style.left = pipe_x+'px';
- pipe2.img.style.left = pipe_x+'px';
+ Caliper1.img.style.left = pipe_x+'px';
+ Caliper2.img.style.left = pipe_x+'px';
+ dialhand.img.style.left = pipe_x+65+'px';
  
  for (var i = bloods.length-1; i>=0; i--) {
   var blood = bloods[i];
@@ -118,7 +119,7 @@ var resize = /*guchi's penis*/ function () {
 }
 
 var want_image_count = 0;
-var loadGameImage /*guchi's penis*/ = function (n) {
+var loadGameImage = function (n) {
  want_image_count++;
  var o = document.createElement('img');
  o.onload = function () {
@@ -133,14 +134,14 @@ var loadGameImage /*guchi's penis*/ = function (n) {
 
 //var sounds_playing = [];
 var want_sound_count = 0;
-var loadGameSound = /*guchi's penis*/ function (n, chc) { // file name, channel count
+var loadGameSound = function (n, chc) { // file name, channel count
  var o = {};
  
  o.channels = [];
  o.channel_pos = 0;
  o.chc = chc;
  
- o.play = /*guchi's penis*/ function () {
+ o.play = function () {
   var tm = new Date().getTime();
   var sc = this.channels.length;
   var got_good_sound = false;
@@ -211,10 +212,11 @@ var pipe_opening = -1;
 var pipe_x;
 
 var game_loaded = false;
-var gameLoaded = /*guchi's penis*/ function () {
+var gameLoaded = function () {
  game.div.appendChild(game.canvas);
- game.div.appendChild(pipe1.img);
- game.div.appendChild(pipe2.img);
+ game.div.appendChild(Caliper1.img);
+ game.div.appendChild(Caliper2.img);
+ game.div.appendChild(dialhand.img);
  game.div.appendChild(ground.canvas);
  game.div.appendChild(city.canvas);
  game.div.appendChild(trees.canvas);
@@ -233,11 +235,11 @@ var gameLoaded = /*guchi's penis*/ function () {
  
  //document.body.addEventListener("touchstart", poundPipes, false);
  
- document.body.onmousedown = /*guchi's penis*/ function () {
+ document.body.onmousedown = function () {
   poundPipes();
  }
  
- document.body.onkeydown = /*guchi's penis*/ function (e) {
+ document.body.onkeydown = function (e) {
   if (e.keyCode == 32) {
    poundPipes();
   }
@@ -247,7 +249,7 @@ var gameLoaded = /*guchi's penis*/ function () {
 
 
 
-var poundPipes = /*guchi's penis*/ function () {
+var poundPipes = function () {
  if (game.ended) { // then we have to set ended=false with the play again button
   return false;
  }
@@ -378,7 +380,7 @@ logo.img = loadGameImage('img/logo.png'); // 626 x 144
 logo.img.style.position = 'absolute';
 logo.img.style.opacity = 0;
 logo.img.style.zIndex = '42069';
-logo.reposition = /*guchi's penis*/ function () {
+logo.reposition = function () {
  logo.img.style.left = Math.floor((ww-626)/2)+'px';
  logo.img.style.top = Math.floor(Math.cos(logo.fr/9)*20 + (hh - 144 - 88)/2)+'px';
 }
@@ -394,7 +396,7 @@ gameover.img = loadGameImage('img/gameover.png'); // 626 x 144
 gameover.img.style.position = 'absolute';
 gameover.img.style.opacity = 0;
 gameover.img.style.zIndex = '42069';
-gameover.reposition = /*guchi's penis*/ function () {
+gameover.reposition = function () {
  gameover.img.style.left = Math.floor((ww-626)/2)+'px';
  gameover.img.style.top = Math.floor(Math.cos(gameover.fr/32)*4 + (hh - 200 - 144 - 88)/2)+'px';
 }
@@ -412,11 +414,11 @@ playagain.img.style.position = 'absolute';
 playagain.img.style.display = 'none';
 playagain.img.style.opacity = 0;
 playagain.img.style.zIndex = '142068';
-playagain.reposition = /*guchi's penis*/ function () {
+playagain.reposition = function () {
  playagain.img.style.left = Math.floor((ww-252)/2)+'px';
  playagain.img.style.top = Math.floor(Math.cos(playagain.fr/14)*5 + (hh + 71 - 88)/2)+'px';
 }
-playagain.img.onclick = /*guchi's penis*/ function () {
+playagain.img.onclick = function () {
  game.ended = false;
  poundPipes();
 }
@@ -431,7 +433,7 @@ c2s.img = loadGameImage('img/clicktostart.png'); // 337 x 75
 c2s.img.style.position = 'absolute';
 c2s.img.style.opacity = 0;
 c2s.img.style.zIndex = '42070';
-c2s.reposition = /*guchi's penis*/ function () {
+c2s.reposition = function () {
  c2s.img.style.left = Math.floor((ww-337)/2)+'px';
  c2s.img.style.top = Math.floor((hh + 250)/2)+'px';
 }
@@ -497,7 +499,7 @@ for (var xx = -3; xx <= 3; xx++) {
   div.innerHTML = '';
  }
 }
-score.update = /*guchi's penis*/ function () {
+score.update = function () {
  for (var i = score.divs.length-1; i>=0; i--) {
   score.divs[i].innerHTML = points;
  }
@@ -537,10 +539,10 @@ trees.bit = loadGameImage('img/trees.png');
 
 
 var ruined = 0;
-var ruinTheFun = /*guchi's penis*/ function () {
+var ruinTheFun = function () {
   ruined = 1
 }
-var jumpRuin = /*guchi's penis*/ function () {
+var jumpRuin = function () {
  if(ruined == 0){
   if (pipe_opening >= 15) {
    pipe_opening = -1;
@@ -557,7 +559,7 @@ var jumpRuin = /*guchi's penis*/ function () {
 var birds = [];
 var dead_birds = [];
 
-var newBird = /*guchi's penis*/ function () {
+var newBird = function () {
  var bird = {};
  bird.cw = 150;
  bird.ch = 150;
@@ -587,14 +589,9 @@ var newBird = /*guchi's penis*/ function () {
  birds.push(bird);
 }
 
-
-
-
-
-
 var blood_image = loadGameImage('img/blood.png');
 var bloods = [];
-var newBlood = /*guchi's penis*/ function () {
+var newBlood = function () {
  var blood = {};
  blood.ww = 325*4;
  blood.hh = 138*4;
@@ -610,41 +607,49 @@ var newBlood = /*guchi's penis*/ function () {
  bloods.push(blood);
 }
 
-var repositionBlood = /*guchi's penis*/ function (blood) {
+var repositionBlood = function (blood) {
  blood.canvas.style.left = (pipe_x + 148/2 - (325*4/2))+'px';
  blood.canvas.style.top = (pipe_center - 32)+'px';
 }
 
 
-var pipe1 = {};
-pipe1.img = loadGameImage('img/pipe1.png');
-pipe1.img.width = 148;
-pipe1.img.height = 1664;
-pipe1.img.style.position = 'absolute';
-pipe1.img.style.left = '340px';
-pipe1.img.style.top = '0px';
-pipe1.img.style.zIndex = '420';
+var Caliper1 = {};
+Caliper1.img = loadGameImage('img/Caliper1.png');
+Caliper1.img.width = 148;
+Caliper1.img.height = 437;
+Caliper1.img.style.position = 'absolute';
+Caliper1.img.style.left = '340px';
+Caliper1.img.style.top = '0px';
+Caliper1.img.style.zIndex = '68';
 
 
-var pipe2 = {};
-pipe2.img = loadGameImage('img/pipe2.png');
-pipe2.img.width = 148;
-pipe2.img.height = 1664;
-pipe2.img.style.position = 'absolute';
-pipe2.img.style.left = '340px';
-pipe2.img.style.top = '0px';
-pipe2.img.style.zIndex = '420';
+var Caliper2 = {};
+Caliper2.img = loadGameImage('img/Caliper2.png');
+Caliper2.img.width = 148;
+Caliper2.img.height = 437;
+Caliper2.img.style.position = 'absolute';
+Caliper2.img.style.left = '340px';
+Caliper2.img.style.top = '0px';
+Caliper2.img.style.zIndex = '420'; //Blaze it
 
+
+var dialhand = {};
+dialhand.img = loadGameImage('img/dialhand.png');
+dialhand.img.width = 60;
+dialhand.img.height = 60;
+dialhand.img.style.position = 'absolute';
+dialhand.img.style.left = '340px';
+dialhand.img.style.top = '0px';
+dialhand.img.style.zIndex = '430';
 
 
 var nbfr = 100;
 var fnbfr = 100;
 
 
-
 var fr = 0;
 var ltm = 0;
-var oef = /*guchi's penis*/ function () {
+var oef = function () {
  if (game_loaded) {
   var ftm = new Date().getTime();
   var tm;
@@ -814,12 +819,16 @@ var oef = /*guchi's penis*/ function () {
    
    if (clanging >= 0) {
     clanging--;
-    pipe1.img.style.left = (pipe_x + Math.cos(fr*Math.PI)*3)+'px';
-    pipe2.img.style.left = (pipe_x + Math.cos(fr*Math.PI)*3)+'px';
+    Caliper1.img.style.left = (pipe_x + Math.cos(fr*Math.PI)*3)+'px';
+    Caliper2.img.style.left = (pipe_x + Math.cos(fr*Math.PI)*3)+'px';
+    dialhand.img.style.left = (pipe_x + Math.cos(fr*Math.PI)*3)+65+'px';
    }
    
-   pipe1.img.style.top = (pipe_center - 1664 - pipe_gap/2)+'px';
-   pipe2.img.style.top = (pipe_center + pipe_gap/2)+'px';
+   Caliper1.img.style.top = (pipe_center - 25 - pipe_gap/2)+'px';
+   Caliper2.img.style.top = (pipe_center + pipe_gap/2)+'px';
+   dialhand.img.style.top = (pipe_center + pipe_gap/2)+30+'px';
+   dialhand.img.style.webkitTransform = "rotate("+(-5*(pipe_center + pipe_gap/2)+180)+"deg)";
+
    if (pipe_opening >= 0) {
     pipe_opening++;
     jumpRuin();
@@ -1029,6 +1038,6 @@ var oef = /*guchi's penis*/ function () {
 }
 
 
-window.onresize = /*guchi's penis*/ function () {
+window.onresize = function () {
  resize();
 }
