@@ -825,8 +825,8 @@ var oef = function () {
    }
    
    Caliper1.img.style.top = (pipe_center - 25 - pipe_gap/2)+'px';
-   Caliper2.img.style.top = (pipe_center + pipe_gap/2)+'px';
-   dialhand.img.style.top = (pipe_center + pipe_gap/2)+30+'px';
+   Caliper2.img.style.top = (pipe_center - 5 + pipe_gap/2)+'px';
+   dialhand.img.style.top = (pipe_center + 25 + pipe_gap/2)+'px';
    dialhand.img.style.webkitTransform = "rotate("+(-5*(pipe_center + pipe_gap/2)+180)+"deg)";
 
    if (pipe_opening >= 0) {
