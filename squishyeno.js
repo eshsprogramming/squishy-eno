@@ -612,7 +612,7 @@ var repositionBlood = function (blood) {
 var Caliper1 = {};
 Caliper1.img = loadGameImage('img/Caliper1.png');
 Caliper1.img.width = 148;
-Caliper1.img.height = 437;
+Caliper1.img.height = 458;
 Caliper1.img.style.position = 'absolute';
 Caliper1.img.style.left = '340px';
 Caliper1.img.style.top = '0px';
@@ -622,7 +622,7 @@ Caliper1.img.style.zIndex = '68';
 var Caliper2 = {};
 Caliper2.img = loadGameImage('img/Caliper2.png');
 Caliper2.img.width = 148;
-Caliper2.img.height = 437;
+Caliper2.img.height = 458;
 Caliper2.img.style.position = 'absolute';
 Caliper2.img.style.left = '340px';
 Caliper2.img.style.top = '0px';
@@ -821,9 +821,9 @@ var oef = function () {
    }
    
    Caliper1.img.style.top = (pipe_center - 25 - pipe_gap/2)+'px';
-   Caliper2.img.style.top = (pipe_center - 5 + pipe_gap/2)+'px';
+   Caliper2.img.style.top = (pipe_center - 4 + pipe_gap/2)+'px';
    dialhand.img.style.top = (pipe_center + 25 + pipe_gap/2)+'px';
-   dialhand.img.style.webkitTransform = "rotate("+(5*(pipe_center + pipe_gap/2)+180)+"deg)";
+   dialhand.img.style.webkitTransform = "rotate("+(50*(pipe_center + pipe_gap/2)+180)+"deg)";
 
    if (pipe_opening >= 0) {
     pipe_opening++;
