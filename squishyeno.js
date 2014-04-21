@@ -38,7 +38,7 @@ var resize = function () {
  
  ground.canvas.width = ww;
  ground.canvas.height = 88;
- ground.ctx.fillStyle = '#ddd894';
+ ground.ctx.fillStyle = '#4c95a7';
  ground.ctx.fillRect(0, 0, ww, 88);
  var gx = 0;
  while (gx < ww) {
