@@ -471,7 +471,7 @@ parody.div.style.textAlign = 'center';
 parody.div.style.fontFamily = 'Verdana';
 parody.div.style.fontSize = '12px';
 parody.div.style.zIndex = 87654;
-parody.div.innerHTML = 'This website is a parody and is not affiliated with Flappy Bird or .GEARS Studios';
+parody.div.innerHTML = 'This website is a parody and is not affiliated with Flappy Bird, Squishy Bird, or .GEARS Studios';
 
 
 
