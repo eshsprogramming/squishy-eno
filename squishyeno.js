@@ -33,7 +33,7 @@ var resize = function () {
  
  game.canvas.width = ww;
  game.canvas.height = hh;
- game.ctx.fillStyle = '#71c5cf';
+ game.ctx.fillStyle = '#ffffff';
  game.ctx.fillRect(0, 0, ww, hh);
  
  ground.canvas.width = ww;
@@ -72,37 +72,60 @@ var resize = function () {
  
  
  city.canvas.width = ww;
- city.canvas.height = 256;
- city.ctx.clearRect(0, 0, ww, 256);
+ city.canvas.height = 437;
+ city.ctx.clearRect(0, 0, ww, 437);
  var gx = 0;
  while (gx < ww) {
   city.ctx.drawImage(city.bit, gx, 0);
-  gx += 300;
+  gx += 512;
  }
  
  city.canvas.style.left = '0px';
- city.canvas.style.top = (hh - 256 - 88)+'px';
+ city.canvas.style.top = (hh - 437 - 88)+'px';
  
- 
- 
- 
- 
- 
- 
+
  trees.canvas.width = ww;
- trees.canvas.height = 216;
- trees.ctx.clearRect(0, 0, ww, 216);
+ trees.canvas.height = 369;
+ trees.ctx.clearRect(0, 0, ww, 369);
  var gx = 0;
  while (gx < ww) {
   trees.ctx.drawImage(trees.bit, gx, 0);
-  gx += 300;
+  gx += 512;
  }
  
  trees.canvas.style.left = '0px';
- trees.canvas.style.top = (hh - 216 - 88)+'px';
+ trees.canvas.style.top = (hh - 369 - 88)+'px';
  
+
+ windows.canvas.width = ww+50;
+ windows.canvas.height = 369;
+ windows.ctx.clearRect(0, 0, ww+50, 369);
+ var gx = 0;
+ while (gx < ww+50) {
+  windows.ctx.drawImage(windows.bit, gx, 0);
+  gx += 512+50;
+ }
  
- 
+ windows.canvas.style.left = '-50px';
+ windows.canvas.style.top = (hh - 369 - 300)+'px';
+
+
+ bricks.canvas.width = ww;
+ bricks.canvas.height = hh;
+ bricks.ctx.clearRect(0, 0, ww, hh);
+ var leftAlt = true;
+ var vertBricks= 0;
+
+for(var gy = 0;gy < hh;gy += bricks.height){
+  bricks.ctx.drawImage(bricks.bit, 0, gy);
+  for(var gx=0; gx < ww; gx += bricks.width){
+    bricks.ctx.drawImage(bricks.bit, gx+bricks.width, vertBricks);
+  }
+  vertBricks += bricks.height;
+}
+ bricks.canvas.style.left = '0px';
+ bricks.canvas.style.top = '0px';
+
  
  
  pipe_x = Math.floor(ww/2 - 148/2);
@@ -220,6 +243,8 @@ var gameLoaded = function () {
  game.div.appendChild(ground.canvas);
  game.div.appendChild(city.canvas);
  game.div.appendChild(trees.canvas);
+ game.div.appendChild(bricks.canvas);
+ game.div.appendChild(windows.canvas);
  game.div.appendChild(logo.img);
  game.div.appendChild(gameover.img);
  document.body.appendChild(playagain.img);
@@ -534,6 +559,25 @@ trees.ctx = trees.canvas.getContext('2d');
 trees.bit = loadGameImage('img/trees.png');
 
 
+var bricks = {};
+bricks.canvas = document.createElement('canvas');
+bricks.canvas.style.position = 'absolute';
+bricks.canvas.style.zIndex = '58';
+bricks.ctx = bricks.canvas.getContext('2d');
+bricks.bit = loadGameImage('img/brick.png');
+bricks.width = 150;
+bricks.height = 106;
+
+
+var windows = {};
+windows.canvas = document.createElement('canvas');
+windows.canvas.style.position = 'absolute';
+windows.canvas.style.zIndex = '59';
+windows.ctx = windows.canvas.getContext('2d');
+windows.bit = loadGameImage('img/window.png');
+windows.width = 512;
+windows.height = 369;
+
 var ruined = 0;
 var ruinTheFun = function () {
   ruined = 1
@@ -823,7 +867,7 @@ var oef = function () {
    Caliper1.img.style.top = (pipe_center - 25 - pipe_gap/2)+'px';
    Caliper2.img.style.top = (pipe_center - 4 + pipe_gap/2)+'px';
    dialhand.img.style.top = (pipe_center + 25 + pipe_gap/2)+'px';
-   dialhand.img.style.webkitTransform = "rotate("+(50*(pipe_center + pipe_gap/2)+180)+"deg)";
+   dialhand.img.style.webkitTransform = "rotate("+(20*(pipe_center + pipe_gap/2)+180)+"deg)";
 
    if (pipe_opening >= 0) {
     pipe_opening++;
