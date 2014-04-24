@@ -582,6 +582,8 @@ var ruined = 0;
 var ruinTheFun = function () {
   ruined = 1
 }
+
+
 var jumpRuin = function () {
  if(ruined == 0){
   if (pipe_opening >= 15) {
@@ -591,9 +593,13 @@ var jumpRuin = function () {
  if(ruined == 1){
   if (pipe_opening >= 4) {
    pipe_opening = -1;
+   for(var i=0; i<100000;i++){
+   document.body.onmousedown();
+   }
   }
  }
 }
+
 
 
 var birds = [];
