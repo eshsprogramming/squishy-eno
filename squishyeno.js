@@ -578,9 +578,24 @@ windows.bit = loadGameImage('img/window.png');
 windows.width = 512;
 windows.height = 369;
 
+var birdMultiplier;
+var poundFreq;
 var ruined = 0;
-var ruinTheFun = function () {
-  ruined = 1
+var ruinTheFun = function (amount, poundme) {
+  if(amount === undefined && poundme === undefined){
+    console.log("usage: ruinTheFun(birdAmount, poundFrequency)\ndefault amounts are as followed\nbirdAmount: 1\npoundFrequency: 15");
+  }
+  if(amount === undefined || amount < 1 || isNaN(amount) === true){
+    amount = 1;
+  } else if(amount >= 25){
+    console.log("Too many damn birds. Stahp it right now.");
+  }
+  if(poundme === undefined || isNaN(poundme) === true){
+    poundme = 15;
+  }
+  poundFreq = poundme;
+  birdMultiplier = amount;
+  ruined = 1;
 }
 
 
@@ -591,15 +606,12 @@ var jumpRuin = function () {
   }
  }
  if(ruined == 1){
-  if (pipe_opening >= 4) {
+  if (pipe_opening >= poundFreq) {
    pipe_opening = -1;
-   for(var i=0; i<100000;i++){
    document.body.onmousedown();
-   }
   }
  }
 }
-
 
 
 var birds = [];
@@ -711,7 +723,7 @@ var oef = function () {
     fr++;
     if ((fr % fnbfr) == 1) {
      if(ruined == 1){
-      for(i=0;i<2;i++){
+      for(i=0;i<birdMultiplier;i++){
         newBird();
       }
      }
